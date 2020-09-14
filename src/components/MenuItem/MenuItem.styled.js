@@ -1,17 +1,4 @@
-import styled from 'styled-components'
-
-export const StyledHomepage = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px 80px;
-`
-
-export const StyledMenu = styled.div`
-  display: flex; 
-  flex-wrap: wrap;
-  justify-content: space-between;
-`
+import styled from 'styled-components/macro'
 
 export const StyledMenuItem = styled.div`
   min-width: 30%;
@@ -21,22 +8,37 @@ export const StyledMenuItem = styled.div`
   align-items: center;
   justify-content: center;
   border: 1px solid ${props => props.theme.colors.border};
+  margin-bottom: 7.5px;
+  margin-right: 7.5px;
+  position: relative;
+  overflow: hidden;
+`
 
-  &:first-child {
-    margin-rigth: 7.5px;
-  }
+export const StyledBackground = styled.div`
+  background-image: url(${props => props.imageSrc});
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.5s;
+  transform: scale(1);
 
-  &:last-child {
-    margin-left: 7.5px;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.3);
   }
 `
 
 export const StyledContent = styled.div`
-  heigth: 90px;
-  padding: 0 25px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  opacity: 0.7;
+  pointer-events: none;
 `
 
 export const StyledTitle = styled.div`
