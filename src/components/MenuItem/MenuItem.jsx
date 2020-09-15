@@ -1,4 +1,5 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 import {
   StyledMenuItem,
   StyledContent,
@@ -7,8 +8,8 @@ import {
   StyledBackground
 } from './MenuItem.styled'
 
-const MenuItem = ({ title, subTitle, imageSrc }) => (
-  <StyledMenuItem>
+const MenuItem = ({ title, subTitle, imageSrc, history, match, linkUrl }) => (
+  <StyledMenuItem onClick={() => history.push(`${match.url}${linkUrl}`)}>
     <StyledBackground imageSrc={imageSrc} />
     <StyledContent>
       <StyledTitle>{title}</StyledTitle>
@@ -17,4 +18,4 @@ const MenuItem = ({ title, subTitle, imageSrc }) => (
   </StyledMenuItem>
 )
 
-export default MenuItem
+export default withRouter(MenuItem)

@@ -12,31 +12,36 @@ class Menu extends React.Component {
           title: 'title 1',
           subTitle: 'subtitle 1',
           imageSrc: 'https://source.unsplash.com/600x400/?fashion,man',
-          id: 1
+          id: 1,
+          linkUrl: 'man'
         },
         {
           title: 'title 2',
           subTitle: 'subtitle 1',
           imageSrc: 'https://source.unsplash.com/600x400/?fashion,woman',
-          id: 2
+          id: 2,
+          linkUrl: ''
         },
         {
           title: 'title 3',
           subTitle: 'subtitle 3',
           imageSrc: 'https://source.unsplash.com/600x400/?fashion,baby',
-          id: 3
+          id: 3,
+          linkUrl: ''
         },
         {
           title: 'title 4',
           subTitle: 'subtitle 4',
           imageSrc: 'https://source.unsplash.com/600x400/?fashion,bags',
-          id: 4
+          id: 4,
+          linkUrl: ''
         },
         {
           title: 'title 5',
           subTitle: 'subtitle 5',
           imageSrc: 'https://source.unsplash.com/600x400/?fashion,shoes',
-          id: 5
+          id: 5,
+          linkUrl: ''
         }
       ]
     }
@@ -45,12 +50,10 @@ class Menu extends React.Component {
   render() {
     return (
       <StyledMenu>
-       {this.state.sections.map(({id, title, subTitle, imageSrc}) => (
-         <MenuItem 
+       {this.state.sections.map(({id, ...rest}) => (
+         <MenuItem
           key={id}
-          title={title}
-          subTitle={subTitle}
-          imageSrc={imageSrc}
+          {...rest}
         />
        ))}
       </StyledMenu>
